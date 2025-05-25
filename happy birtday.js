@@ -398,3 +398,13 @@ window.addEventListener("resize", function () {
 
   ctx.font = opts.charSize + "px Verdana";
 });
+
+const audio = new Audio("cumple.mp3"); // Asegúrate de que el archivo esté en la misma carpeta
+audio.loop = true;
+audio.volume = 0.5;
+
+document.addEventListener("click", function startAudio() {
+  audio.play();
+  document.removeEventListener("click", startAudio); // Solo permite un clic para iniciar
+});
+
